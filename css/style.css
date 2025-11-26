@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+@font-face {
+    font-family: 'Karina'; 
+    src: url('fonts/Karina.woff2') format('woff2');
+    font-weight: normal; 
+    font-style: normal;
+    font-display: swap;
+}
+
+.profile-picture {
+    max-width: 50%;
+    height: auto;
+    border-radius: 50%;
+}
+
+body {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    background-color: #1e1e20;
+    color: #9e9eb3;
+}
+
+h1 {
+    font-family: "Karina", sans-serif;
+    font-size: 50px;
+    color: #e1e1e9;
+    
+    transition: opacity 0.6s ease-in, transform 0.6s ease-in;
+    opacity: 1; 
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+
+h2 {
+    font-family: "Karina", sans-serif;
+    font-size: 35px;
+    color: #e1e1e9;
+}
+
+li, a, button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.navbar {
+    position: relative; /* Crucial para posicionar el marcador */
+    display: flex;      /* CLAVE: Pone los <li> en línea y establece un contexto flex */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 50px; /* 👈 Recuperamos esta propiedad */
+}
+/* El segundo bloque ".navbar { ... }" se elimina completamente */
+
+.navbar li {
+    /* Mantén el resto de las propiedades */
+    position: relative;
+    z-index: 2; /* Sube el z-index de los ítems para estar seguro */
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#marker {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    background-color: white;
+    opacity: 10%; 
+    border-radius: 50px;
+    z-index: 1; /* El marcador debe estar por debajo de los ítems (z-index: 2) */
+    transition: transform 0.4s ease-in-out, width 0.4s ease-in-out;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container > .block:last-child:nth-child(odd) {
+    width: 100%;
+    
+}
+
+.block {
+    width: calc(50% - 10px); 
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box; 
+
+    transition: width 0.5s ease, margin 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .block {
+        width: 100%; 
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+
