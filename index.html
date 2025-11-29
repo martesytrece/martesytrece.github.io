@@ -16,7 +16,6 @@
 
                 <li class="navbarSelected"><a href="#about" data-tab="about">About</a></li>
                 <li><a href="#portfolio" data-tab="portfolio">Portfolio</a></li>
-                <li><a href="#curriculum" data-tab="curriculum">Curriculum</a></li>
             </ul>
         </nav>
     </header>
@@ -26,18 +25,17 @@
         <section id="about" class="tab-content active">
             <div class="container">
                 <div class="block">
-                    <img src="media/pfp.png" alt="profile picture" class="profile-picture">
-                    <h1 class="fade-in"> Hi, I'm Mar!</h1>
-                    <p class="fade-in"> I'm an artist who is passionate about videogames </p>
-
-                    <!-- RRSS -->
-                    <img src="media/icons/linkedin.svg" class="icon">
-                    <img src="media/icons/artstation.svg">
-                    <img src="media/icons/instagram.svg">
+                    <div class="fade-in">
+                        <img src="media/pfp.png" alt="profile picture" class="profile-picture">
+                    <h1> Hi, I'm Mar!</h1>
+                    </div> 
+                    <p class="fade-in">Small artist who is very passionate about videogames and illustration.
+                        Feel free to check my work!
+                    </p>
                 </div>
                 <div class="block">
                     <h2 class="fade-in"> About </h2>
-                    <p class="fade-in"> Final year student of Videogame Design and Development degree with 
+                    <p class="fade-in justify"> Final year student of Videogame Design and Development degree with 
                         a hybrid artistic and technichal profile. With a visionary and analytic approach,
                         i'm focused on conceptualization and development of media applications, as well 
                         as the integration and optimization of the art pipeline in videogames.
@@ -45,6 +43,23 @@
                         along with the study of aesthetic experiences and their expresive function. 
                         Passionate about 2D illustration and 3D modelling.
                     </p>
+                    
+                    <!-- RRSS -->
+                    <div class="icon fade-in">
+                        <!-- LinkdeIn -->
+                        <a href="https://www.linkedin.com/in/mmarquezgarcia" target="_blank">
+                            <img src="media/icons/linkedin.svg">
+                        </a>
+                        <!-- AstStation -->
+                        <a href="https://www.artstation.com/martessytrece" target="_blank">
+                            <img src="media/icons/artstation.svg">
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/martessytrece/" target="_blank">
+                            <img src="media/icons/instagram.svg">
+                        </a>
+                    </div>
+
                 </div>
                 <div class="block">
                     <h2 class="fade-in">Projects</h2>
@@ -55,16 +70,16 @@
                 <!-- Item -->
                 <div class="item">
                     <img src="media/covers/washisadventure.png" alt="Washi's Adventure" class="cover" href="https://botpa.itch.io/tochimochi">
-                    <p>Washi's Adventure - <i>ongoing</i></p>
+                    <p class="title">Washi's Adventure - <i>ongoing</i></p>
                     <ul class="itemtext">
                         <li><p>Multiplatform rogue-lite inspired in origami for Web Games</p></li>
-                        <li><p>Role: design, </p></li>
-                    </ul>
+                        <li><p>Role: videogame designer, 3D enviroment art, texturing, social media and brand management </p></li>
+                    </ul>          
                 </div>
                 <!-- Item -->
                 <div class="item">
                     <img src="media/covers/tochimochi.png" alt="Tochimochi" class="cover">
-                    <p>Tochimochi - 2025</p>
+                    <p class="title">Tochimochi - 2025</p> 
                     <p class="quote">"Two worlds, one challenge"</p>
                     <ul class="itemtext">
                         <li><p>Submission to International Game Jam c/UTN Buenos Aires</p></li>
@@ -75,7 +90,7 @@
                 <!-- Item -->
                 <div class="item">
                     <img src="media/covers/inkcatiction.png" alt="Ink Catiction" class="cover">
-                    <p>Ink Catiction - 2024</p>
+                    <p class="title">Ink Catiction - 2024</p>
                     <ul class="itemtext">
                         <li><p>Multiplayer browser videogame</p></li>
                         <li><p>Role: gameplay programming, 2D illustration and animation</p></li>
@@ -85,7 +100,8 @@
                 <!-- Item -->
                 <div class="item">
                     <img src="media/covers/twinspirits.png" alt="Twin Spirits" class="cover">
-                    <p>Twin Spirits - 2023</p>
+                    <p class="title">Twin Spirits - 2023</p>
+                    <p class="quote">"Unity is strength"</p>
                     <ul class="itemtext">
                         <li><p>Submission to GameScholars 2º Edition </p></li>
                         <li><p>Role: 2D illustration, UX/UI</p></li>
@@ -98,14 +114,6 @@
             <h2 class="fade-in">Portfolio</h2>
             <p class="fade-in">This is the content for the Projects tab.</p>
            
-        </section>
-
-        <section id="curriculum" class="tab-content">
-            <h2 class="fade-in">My Curriculum Vitae</h2>
-            <p class="fade-in">This is the content for the Curriculum tab.</p>
-            <object data="curriculum/CV.pdf" type="applications/pdf" width="800%" height="500px">
-                <p> tu puta madre</p>
-            </object>
         </section>
     </main>
 

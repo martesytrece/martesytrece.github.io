@@ -1,35 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 @font-face {
-    font-family: 'Karina'; 
+    font-family: 'Karina';
     src: url('fonts/Karina.woff2') format('woff2');
-    font-weight: normal; 
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 /* ----------------------------------------------------------- */
-/* 2. BASE & TIPOGRAFÍA (Etiquetas HTML base) */
+/* html base */
 /* ----------------------------------------------------------- */
 
 body {
     background-color: #1e1e20;
     color: #9e9eb3;
     font-family: "Poppins", sans-serif;
-    text-align: center; 
+    text-align: center;
 }
 
-/* Elementos interactivos (para consistencia de fuente) */
-ul li a {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
-/* Encabezados */
-h1, h2 {
+h1,
+h2 {
     font-family: "Karina", sans-serif;
     color: #e1e1e9;
 }
@@ -42,75 +33,42 @@ h2 {
     font-size: 35px;
 }
 
+ul li a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
 
-
+.justify {
+    justify-content: center;
+    text-align: justify;
+}
 
 /* ----------------------------------------------------------- */
-/* 3. LAYOUT (Contenedores y Estructura Principal) */
+/* Layout */
 /* ----------------------------------------------------------- */
 
+/* Navigation bar */
 header {
     display: flex;
     justify-content: center;
     padding-top: 10px;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 20px auto;
-    gap: 20px;
-}
-
-.item {
-    width: 400px;
-    background-color: rgba(1, 1, 1, 0.05);
-    border: 2px solid #888891;
-    border-radius: 25px;
-    box-sizing: border-box;
-
-    justify-content: center;
-    padding: 30px;
-
-    font-size: 14px;
-}
-
-.cover {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5%;
-    
-}
-
-.quote {
-    color: white;
-    font-style: italic;
-}
-
-.itemtext {
-    text-align: left;
-}
-
-/* ----------------------------------------------------------- */
-/* 4. COMPONENTES (Módulos Reutilizables) */
-/* ----------------------------------------------------------- */
-
-/* A. Navbar y Navegación */
-
 .navbar {
-    position: relative; 
-    display: flex; 
+    position: relative;
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    border-radius: 50px; 
+    border-radius: 50px;
 }
 
 .navbar li {
     position: relative;
-    z-index: 2; 
+    z-index: 2;
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -120,77 +78,145 @@ header {
     height: 100%;
     top: 0;
     background-color: white;
-    opacity: 0.1; 
+    opacity: 0.1;
     border-radius: 50px;
-    z-index: 1; 
+    z-index: 1;
     transition: transform 0.4s ease-in-out, width 0.4s ease-in-out;
 }
 
-/* B. Bloques de Contenido (Flex Item) */
-
-.block {
-    width: calc(50% - 10px); 
-    margin-bottom: 20px;
-    padding: 20px;
-    box-sizing: border-box; 
-    transition: width 0.5s ease, margin 0.3s ease;
+/* Main container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+    gap: 20px;
 }
 
-/* Regla especial para que el último bloque ocupe el 100% si hay un número impar */
-.container > .block:last-child:nth-child(odd) {
+.container>.block:last-child:nth-child(odd) {
     width: 100%;
 }
 
-/* Media */
+.block {
+    width: calc(50% - 10px);
+    padding: 5px;
+    box-sizing: border-box;
+    transition: width 0.5s ease, margin 0.3s ease;
+}
+
 .profile-picture {
     max-width: 50%;
     height: auto;
     border-radius: 50%;
 }
 
+/* Game Gallery */
+.item {
+    width: 400px;
+    height: auto;
+    background-color: #1e1e20;
+    border: 2px solid #888891;
+    border-radius: 25px;
+    box-sizing: border-box;
+
+    justify-content: center;
+    padding: 30px;
+
+    font-size: 14px;
+    transition: transform 0.4s ease-in-out, width 0.4s ease-in-out;
+}
+
+.item:hover {
+  transform: scale(1.2); 
+  background-color: #1e1e20;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease-in-out, width 0.4s ease-in-out;
+}
+
+.cover {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5%;
+}
+
+.title {
+    color: white;
+    font-style: bold;
+    font-size: 16px;
+}
+
+.itemtext {
+    text-align: left;
+}
+
+.quote {
+    color: white;
+    font-style: italic;
+}
+
 /* ----------------------------------------------------------- */
-/* 5. UTILIDADES, ESTADOS Y ANIMACIONES */
+/* Social Media Icons */
+/* ----------------------------------------------------------- */
+
+.icon {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: 2px #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+}
+
+.icon img {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon img:hover {
+    opacity: 0.6;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* ----------------------------------------------------------- */
+/* General Animations & tab display */
 /* ----------------------------------------------------------- */
 
 .fade-in {
     opacity: 0;
     transform: translateY(-20px);
-    /* Es VITAL que la transición esté aquí para que el JS la use */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* ESTADO FINAL: La clase que el JS añade para activar la transición */
 .run-fade-in {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* CLASE TEMPORAL DE REINICIO: Necesaria para el cambio de pestaña */
 .no-transition {
-    /* La transición debe ser nula al forzar el reinicio */
     transition: none !important;
 }
 
-/* Estados de Pestañas (Tab Content) */
 
 .tab-content {
     display: none;
-    padding: 20px; 
+    padding: 20px;
 }
 
-/* Estado Activo */
 .tab-content.active {
     display: block;
 }
 
 /* ----------------------------------------------------------- */
-/* 6. MEDIA QUERIES (Estilos Responsivos) */
+/* Media queries */
 /* ----------------------------------------------------------- */
 
 @media (max-width: 768px) {
     .block {
-        width: 100%; 
-        /* Los márgenes left/right deberían ser 0 para un ancho del 100% */
+        width: 100%;
         margin-right: 0;
         margin-left: 0;
     }
