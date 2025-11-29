@@ -1,66 +1,78 @@
-window.addEventListener('pageshow', function(event) {
-    const fadeInAnim = document.querySelector('.fade-in');
-    if (fadeInAnim) {
-        if (event.persisted) {
-            fadeInAnim.classList.add('fade-in');
-        }
-        setTimeout(function() {
-            fadeInAnim.classList.remove('fade-in');
-        }, 0); 
-    }
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const marker = document.getElementById('marker');
+    const tabLinks = document.querySelectorAll('.navbar a');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const navbarItems = document.querySelectorAll('.navbar li'); 
 
+    const replayAnimation = (contentSection) => {
+    const elementsToAnimate = contentSection.querySelectorAll('.fade-in'); 
 
-window.addEventListener('load', () => {
-    const marker = document.querySelector('#marker');
-    const items = document.querySelectorAll('.navbar li');
-    
-    const ANIMATION_DURATION = 400; 
-    const CSS_TRANSITION = `transform ${ANIMATION_DURATION / 1000}s ease-in-out, width ${ANIMATION_DURATION / 1000}s ease-in-out`;
-    const NO_TRANSITION = 'none';
+    elementsToAnimate.forEach((elem, index) => {
+        elem.classList.add('no-transition');
+        elem.classList.remove('run-fade-in'); 
+        
+        // Repaint
+        void elem.offsetWidth; 
+        
+        requestAnimationFrame(() => {
+            elem.classList.remove('no-transition'); 
+            elem.style.transitionDelay = `${index * 0.3}s`; 
+            elem.classList.add('run-fade-in');
+        });
+    });
+};
 
-    let currentActiveItem = document.querySelector('.navbarSelected');
-
-    function moveIndicator(element) {
-        marker.style.transform = `translateX(${element.offsetLeft}px)`; 
-        marker.style.width = element.offsetWidth + 'px';
-    }
-
-
-    if (currentActiveItem) {
-        marker.style.transition = NO_TRANSITION; 
-        moveIndicator(currentActiveItem);
-        window.getComputedStyle(marker).transform; 
-        marker.style.transition = CSS_TRANSITION;
-    }
-
-    items.forEach(link => {
-        link.addEventListener('click', (e) => {
+    const runAnimation = (animation) => {
+        animation.forEach((elem, index) => {
+            elem.classList.remove('run-fade-in'); 
             
-            const linkElement = e.currentTarget.querySelector('a');
-  
+            // Repaint
+            void elem.offsetWidth; 
+            
+            requestAnimationFrame(() => {
+                elem.style.transitionDelay = `${index * .5}s`; 
+                elem.classList.add('run-fade-in');
+            });
+        });
+    };
+
+    // Move marker to selected tab
+    const moveMarker = (activeTab) => {
+        if (!activeTab) return;
+
+        requestAnimationFrame(() => {
+            marker.style.width = `${activeTab.offsetWidth}px`;
+            marker.style.transform = `translateX(${activeTab.offsetLeft}px)`;
+        });
+    };
+
+    // Main
+    tabLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
             e.preventDefault(); 
             
-            if (e.currentTarget !== currentActiveItem) {
-                if (currentActiveItem) {
-                    currentActiveItem.classList.remove('navbarSelected');
-                }
-                e.currentTarget.classList.add('navbarSelected');
-                moveIndicator(e.currentTarget);
-   
-                currentActiveItem = e.currentTarget;
+            const clickedLi = e.target.parentElement; 
+            const targetId = e.target.getAttribute('href').substring(1); 
+            const targetContent = document.getElementById(targetId);
 
-                if (linkElement && linkElement.href && linkElement.getAttribute('href') !== '#') {
-                     setTimeout(() => {
-                         window.location.href = linkElement.href;
-                     }, ANIMATION_DURATION);
-                }
-                
-            } else {
-                 if (linkElement && linkElement.href && linkElement.getAttribute('href') !== '#') {
-                      window.location.href = linkElement.href;
-                 }
+            navbarItems.forEach(li => li.classList.remove('navbarSelected'));
+            clickedLi.classList.add('navbarSelected');
+            moveMarker(clickedLi); 
+
+   
+            tabContents.forEach(content => content.classList.remove('active'));
+            if (targetContent) {
+                targetContent.classList.add('active');
+                replayAnimation(targetContent);
             }
         });
     });
+    const initialTab = document.querySelector('.navbarSelected');
+    const initialContent = document.querySelector('.tab-content.active');
+    
+    moveMarker(initialTab);
+
+    if (initialContent) {
+        replayAnimation(initialContent);
+    }
 });

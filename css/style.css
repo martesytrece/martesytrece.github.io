@@ -8,41 +8,19 @@
     font-display: swap;
 }
 
-.profile-picture {
-    max-width: 50%;
-    height: auto;
-    border-radius: 50%;
-}
+/* ----------------------------------------------------------- */
+/* 2. BASE & TIPOGRAFÍA (Etiquetas HTML base) */
+/* ----------------------------------------------------------- */
 
 body {
-    text-align: center;
-    font-family: "Poppins", sans-serif;
     background-color: #1e1e20;
     color: #9e9eb3;
+    font-family: "Poppins", sans-serif;
+    text-align: center; 
 }
 
-h1 {
-    font-family: "Karina", sans-serif;
-    font-size: 50px;
-    color: #e1e1e9;
-    
-    transition: opacity 0.6s ease-in, transform 0.6s ease-in;
-    opacity: 1; 
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(-20px);
-}
-
-
-h2 {
-    font-family: "Karina", sans-serif;
-    font-size: 35px;
-    color: #e1e1e9;
-}
-
-li, a, button {
+/* Elementos interactivos (para consistencia de fuente) */
+ul li a {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -50,6 +28,26 @@ li, a, button {
     text-decoration: none;
 }
 
+/* Encabezados */
+h1, h2 {
+    font-family: "Karina", sans-serif;
+    color: #e1e1e9;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+
+
+
+/* ----------------------------------------------------------- */
+/* 3. LAYOUT (Contenedores y Estructura Principal) */
+/* ----------------------------------------------------------- */
 
 header {
     display: flex;
@@ -57,20 +55,62 @@ header {
     padding-top: 10px;
 }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.item {
+    width: 400px;
+    background-color: rgba(1, 1, 1, 0.05);
+    border: 2px solid #888891;
+    border-radius: 25px;
+    box-sizing: border-box;
+
+    justify-content: center;
+    padding: 30px;
+
+    font-size: 14px;
+}
+
+.cover {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5%;
+    
+}
+
+.quote {
+    color: white;
+    font-style: italic;
+}
+
+.itemtext {
+    text-align: left;
+}
+
+/* ----------------------------------------------------------- */
+/* 4. COMPONENTES (Módulos Reutilizables) */
+/* ----------------------------------------------------------- */
+
+/* A. Navbar y Navegación */
+
 .navbar {
-    position: relative; /* Crucial para posicionar el marcador */
-    display: flex;      /* CLAVE: Pone los <li> en línea y establece un contexto flex */
+    position: relative; 
+    display: flex; 
     list-style: none;
     padding: 0;
     margin: 0;
-    border-radius: 50px; /* 👈 Recuperamos esta propiedad */
+    border-radius: 50px; 
 }
-/* El segundo bloque ".navbar { ... }" se elimina completamente */
 
 .navbar li {
-    /* Mantén el resto de las propiedades */
     position: relative;
-    z-index: 2; /* Sube el z-index de los ítems para estar seguro */
+    z-index: 2; 
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -80,39 +120,78 @@ header {
     height: 100%;
     top: 0;
     background-color: white;
-    opacity: 10%; 
+    opacity: 0.1; 
     border-radius: 50px;
-    z-index: 1; /* El marcador debe estar por debajo de los ítems (z-index: 2) */
+    z-index: 1; 
     transition: transform 0.4s ease-in-out, width 0.4s ease-in-out;
 }
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-.container > .block:last-child:nth-child(odd) {
-    width: 100%;
-    
-}
+/* B. Bloques de Contenido (Flex Item) */
 
 .block {
     width: calc(50% - 10px); 
     margin-bottom: 20px;
     padding: 20px;
     box-sizing: border-box; 
-
     transition: width 0.5s ease, margin 0.3s ease;
 }
+
+/* Regla especial para que el último bloque ocupe el 100% si hay un número impar */
+.container > .block:last-child:nth-child(odd) {
+    width: 100%;
+}
+
+/* Media */
+.profile-picture {
+    max-width: 50%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* ----------------------------------------------------------- */
+/* 5. UTILIDADES, ESTADOS Y ANIMACIONES */
+/* ----------------------------------------------------------- */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(-20px);
+    /* Es VITAL que la transición esté aquí para que el JS la use */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
+}
+
+/* ESTADO FINAL: La clase que el JS añade para activar la transición */
+.run-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CLASE TEMPORAL DE REINICIO: Necesaria para el cambio de pestaña */
+.no-transition {
+    /* La transición debe ser nula al forzar el reinicio */
+    transition: none !important;
+}
+
+/* Estados de Pestañas (Tab Content) */
+
+.tab-content {
+    display: none;
+    padding: 20px; 
+}
+
+/* Estado Activo */
+.tab-content.active {
+    display: block;
+}
+
+/* ----------------------------------------------------------- */
+/* 6. MEDIA QUERIES (Estilos Responsivos) */
+/* ----------------------------------------------------------- */
 
 @media (max-width: 768px) {
     .block {
         width: 100%; 
+        /* Los márgenes left/right deberían ser 0 para un ancho del 100% */
         margin-right: 0;
         margin-left: 0;
     }
 }
-
-
