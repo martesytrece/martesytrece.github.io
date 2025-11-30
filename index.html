@@ -1,124 +1,193 @@
 <!DOCTYPE html>
 <html>
-<head>
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    
-</head> 
+
+</head>
+
 <body>
+    <!------------------ Navigation Bar ------------------>
     <header>
         <nav>
             <ul class="navbar">
                 <div id="marker"></div>
-
-                <li class="navbarSelected"><a href="#about" data-tab="about">About</a></li>
-                <li><a href="#portfolio" data-tab="portfolio">Portfolio</a></li>
+                <li class="navbarSelected"><a href="#Home" data-tab="Home">Home</a></li>
+                <li><a href="#projects" data-tab="projects">Projects</a></li>
+                <li><a href="#gallery" data-tab="gallery">Gallery</a></li>
             </ul>
         </nav>
     </header>
 
-
     <main>
-        <section id="about" class="tab-content active">
+        <!------------------- Home Tab ------------------->
+        <section id="Home" class="tab-content active">
             <div class="container">
                 <div class="block">
+                    <!-- Intro -->
                     <div class="fade-in">
                         <img src="media/pfp.png" alt="profile picture" class="profile-picture">
-                    <h1> Hi, I'm Mar!</h1>
-                    </div> 
-                    <p class="fade-in">Small artist who is very passionate about videogames and illustration.
-                        Feel free to check my work!
-                    </p>
+                        <h1> Hi, I'm Mar!</h1>
+                        <!-- RRSS -->
+                        <div class="icon fade-in">
+                            <!-- LinkdeIn -->
+                            <a href="https://www.linkedin.com/in/mmarquezgarcia" target="_blank">
+                                <img src="media/icons/linkedin.svg">
+                            </a>
+                            <!-- AstStation -->
+                            <a href="https://www.artstation.com/martessytrece" target="_blank">
+                                <img src="media/icons/artstation.svg">
+                            </a>
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/martessytrece/" target="_blank">
+                                <img src="media/icons/instagram.svg">
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="block">
                     <h2 class="fade-in"> About </h2>
-                    <p class="fade-in justify"> Final year student of Videogame Design and Development degree with 
-                        a hybrid artistic and technichal profile. With a visionary and analytic approach,
-                        i'm focused on conceptualization and development of media applications, as well 
-                        as the integration and optimization of the art pipeline in videogames.
-                        Highly interested in the intersection of technichal and artistic disciplines 
-                        along with the study of aesthetic experiences and their expresive function. 
-                        Passionate about 2D illustration and 3D modelling.
-                    </p>
-                    
-                    <!-- RRSS -->
-                    <div class="icon fade-in">
-                        <!-- LinkdeIn -->
-                        <a href="https://www.linkedin.com/in/mmarquezgarcia" target="_blank">
-                            <img src="media/icons/linkedin.svg">
-                        </a>
-                        <!-- AstStation -->
-                        <a href="https://www.artstation.com/martessytrece" target="_blank">
-                            <img src="media/icons/artstation.svg">
-                        </a>
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/martessytrece/" target="_blank">
-                            <img src="media/icons/instagram.svg">
-                        </a>
+                    <div class="fade-in justify">
+                        <p>Small artist who is very passionate about videogames and illustration.
+                            Feel free to check my work!
+                        </p>
+                        <p>
+                            Final year student of Videogame Design and Development degree
+                            with a hybrid artistic and technichal profile. With a visionary and analytic approach,
+                            i'm focused on conceptualization and development of media applications, as well as the
+                            integration and optimization of the art pipeline in videogames. Highly interested in
+                            the intersection of technichal and artistic disciplines along with the study of aesthetic
+                            experiences and their expresive function. Passionate about 2D illustration and 3D modelling.
+                        </p>
                     </div>
+                </div>
 
-                </div>
+                <!-- Skills -->
                 <div class="block">
-                    <h2 class="fade-in">Projects</h2>
-                    <p class="fade-in"> Some hightlighted projects I have taken part in</p>
+                    <h2 class="fade-in">Skills</h2>
+                    <div class="container">
+                        <!-- Hard Skills -->
+                        <div class="block fade-in">
+                            <h3>Hard Skills</h3>
+                            <ul class="itemtext">
+                                <li><p>3D Software: 3Ds Max, Blender, Substance 3D Painter</p></li>
+                                <li><p>2D Software: Photoshop, Animator, Procreate, Krita</p></li>
+                                <li><p>Programming Languages: Java, JavaScript, C, C++, C#, Kotlin</p></li>
+                                <li><p>Videogame Engine: Unity</p></li>
+                                <li><p>Databases: MySQL, SQLite, mongoDB</p></li>
+                                <li><p>Project management: Github Projects, Jira, Trello</p></li>
+                            </ul>
+                        </div>
+
+                        <!-- Soft Skills -->
+                        <div class="block fade-in">
+                            <h3>Soft Skills</h3>
+                            <ul class="itemtext">
+                                <li>
+                                    <p>Creativity and Innovation to generate enriching and impactful solutions</p>
+                                </li>
+                                <li>
+                                    <p>Detail-Oriented with a focus on prioritizing quality and consistency in all
+                                        deliverables</p>
+                                </li>
+                                <li>
+                                    <p>Strong Problem-Solving Capacity, adept at addressing and resolving complex technical
+                                        and artistic challenges</p>
+                                </li>
+                                <li>
+                                    <p>High Adaptability to new tools and evolving environments; enthusiastic and proactive
+                                        learner</p>
+                                </li>
+                                <li>
+                                    <p>Autonomy and Initiative to effectively direct and execute tasks with minimal
+                                        supervision</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
                 </div>
-            </div>
+        </section>
+
+        <!--------------- Projects Tab ----------------->
+        <section id="projects" class="tab-content">
+            <h2 class="fade-in">Projects</h2>
             <div class="container fade-in">
-                <!-- Item -->
+                <!-- Project -->
                 <div class="item">
-                    <img src="media/covers/washisadventure.png" alt="Washi's Adventure" class="cover" href="https://botpa.itch.io/tochimochi">
+                    <img src="media/covers/washisadventure.png" alt="Washi's Adventure" class="cover"
+                        href="https://botpa.itch.io/tochimochi">
                     <p class="title">Washi's Adventure - <i>ongoing</i></p>
                     <ul class="itemtext">
-                        <li><p>Multiplatform rogue-lite inspired in origami for Web Games</p></li>
-                        <li><p>Role: videogame designer, 3D enviroment art, texturing, social media and brand management </p></li>
-                    </ul>          
+                        <li>
+                            <p>Multiplatform rogue-lite inspired in origami for Web Games</p>
+                        </li>
+                        <li>
+                            <p>Role: videogame designer, 3D enviroment art, texturing, social media and brand management
+                            </p>
+                        </li>
+                    </ul>
                 </div>
-                <!-- Item -->
+                <!-- Project -->
                 <div class="item">
                     <img src="media/covers/tochimochi.png" alt="Tochimochi" class="cover">
-                    <p class="title">Tochimochi - 2025</p> 
+                    <p class="title">Tochimochi - 2025</p>
                     <p class="quote">"Two worlds, one challenge"</p>
                     <ul class="itemtext">
-                        <li><p>Submission to International Game Jam c/UTN Buenos Aires</p></li>
-                        <li><p>Role: 3D enviromental artist, character and props texturing </p></li>
+                        <li>
+                            <p>Submission to International Game Jam c/UTN Buenos Aires</p>
+                        </li>
+                        <li>
+                            <p>Role: 3D enviromental artist, character and props texturing </p>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- Item -->
+                <!-- Project -->
                 <div class="item">
                     <img src="media/covers/inkcatiction.png" alt="Ink Catiction" class="cover">
                     <p class="title">Ink Catiction - 2024</p>
                     <ul class="itemtext">
-                        <li><p>Multiplayer browser videogame</p></li>
-                        <li><p>Role: gameplay programming, 2D illustration and animation</p></li>
+                        <li>
+                            <p>Multiplayer browser videogame</p>
+                        </li>
+                        <li>
+                            <p>Role: gameplay programming, 2D illustration and animation</p>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- Item -->
+                <!-- Project -->
                 <div class="item">
                     <img src="media/covers/twinspirits.png" alt="Twin Spirits" class="cover">
                     <p class="title">Twin Spirits - 2023</p>
                     <p class="quote">"Unity is strength"</p>
                     <ul class="itemtext">
-                        <li><p>Submission to GameScholars 2º Edition </p></li>
-                        <li><p>Role: 2D illustration, UX/UI</p></li>
+                        <li>
+                            <p>Submission to GameScholars 2º Edition </p>
+                        </li>
+                        <li>
+                            <p>Role: 2D illustration, UX/UI</p>
+                        </li>
                     </ul>
                 </div>
             </div>
+
         </section>
 
-        <section id="portfolio" class="tab-content">
-            <h2 class="fade-in">Portfolio</h2>
-            <p class="fade-in">This is the content for the Projects tab.</p>
-           
+        <!---------------- Gallery Tab ----------------->
+        <section id="gallery" class="tab-content">
+            <h2 class="fade-in">Gallery</h2>
+            <p>Gallery of personal art</p>
+
         </section>
     </main>
 
-
-    <!-- Scripting -->
+    <!-------------------- Scripting --------------------->
     <script src="js/anims.js"></script>
 </body>
+
 </html>

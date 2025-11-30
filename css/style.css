@@ -115,23 +115,17 @@ header {
 .item {
     width: 400px;
     height: auto;
-    background-color: #1e1e20;
+    background-color: #222224;
     border: 2px solid #888891;
     border-radius: 25px;
     box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 
     justify-content: center;
     padding: 30px;
 
     font-size: 14px;
     transition: transform 0.4s ease-in-out, width 0.4s ease-in-out;
-}
-
-.item:hover {
-  transform: scale(1.2); 
-  background-color: #1e1e20;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.4s ease-in-out, width 0.4s ease-in-out;
 }
 
 .cover {
@@ -160,16 +154,20 @@ header {
 /* ----------------------------------------------------------- */
 
 .icon {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
+    display: inline-flex;
+    gap: 10px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 50px;
     border: 2px #ffffff;
     border-radius: 10px;
+    background-color:#222224;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     justify-content: center;
 }
 
 .icon img {
+    transform: scale(0.7);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -219,5 +217,14 @@ header {
         width: 100%;
         margin-right: 0;
         margin-left: 0;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .item:hover {
+        transform: scale(1.2); 
+        background-color: #222224;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);       
+        transition: transform 0.4s ease-in-out, width 0.4s ease-in-out;
     }
 }
